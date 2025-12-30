@@ -89,7 +89,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, repeat: Infinity, repeatType: "loop" }}
                     style={{ marginTop: '5rem', color: 'var(--color-primary)', fontFamily: 'var(--font-display)', fontSize: '1.5rem', letterSpacing: '0.2em' }}
                 >
-                    PRESS START
+                    SCROLL TO EXPLORE
                 </motion.div>
             </div>
 
