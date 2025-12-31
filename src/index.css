@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Anton&display=swap');
+
+
 :root {
-  /* =========================
-     COLOR PALETTE
-     ========================= */
+  /* Palette - High Contrast Grasshopper Style */
   --color-bg: #050505;
   --color-text: #f0f0f0;
-
   --color-primary: #39ff14;
   /* Neon Green */
   --color-secondary: #ff0069;
@@ -14,11 +15,7 @@
   --color-nintendo: #e60012;
   /* Nintendo Red */
 
-  /* =========================
-     FONT STACKS (ROBUSTI)
-     ========================= */
-
-  /* Testo principale – ultra compatibile */
+  /* Font stacks */
   --font-main: 'Inter',
     system-ui,
     -apple-system,
@@ -27,11 +24,8 @@
     Arial,
     sans-serif;
 
-  /* Titoli display – aggressivi ma affidabili su mobile */
+  /* ✅ Display font affidabile su mobile */
   --font-display: 'Anton',
-    'Impact',
-    'Haettenschweiler',
-    'Arial Black',
     system-ui,
     -apple-system,
     'Segoe UI',
@@ -39,35 +33,10 @@
     Arial,
     sans-serif;
 
-  /* =========================
-     GLITCH CONSTANTS
-     ========================= */
+  /* Glitch constants */
   --glitch-offset: 2px;
 }
 
-/* =========================
-   RESET & BASE
-   ========================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  cursor: none;
-  /* custom cursor */
-}
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-main);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* =========================
-   TYPOGRAPHY – DISPLAY
-   ========================= */
 h1,
 h2,
 h3,
@@ -80,69 +49,9 @@ h6 {
   line-height: 0.9;
 }
 
+/* Replica look screenshot: inclinazione + ombra rosa */
 h1 {
   font-size: clamp(3rem, 10vw, 8rem);
-  transform: skewX(-5deg);
-  text-shadow: 4px 4px 0 var(--color-secondary);
-}
-
-/* =========================
-   LINKS
-   ========================= */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================
-   UTILITIES
-   ========================= */
-.text-neon-green {
-  color: var(--color-primary);
-}
-
-.text-neon-pink {
-  color: var(--color-secondary);
-}
-
-.box-glitch {
-  border: 2px solid var(--color-primary);
-  box-shadow: 4px 4px 0 var(--color-secondary);
-  background: rgba(5, 5, 5, 0.9);
-}
-
-/* =========================
-   CRT SCANLINES OVERLAY
-   ========================= */
-.scanlines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 50%,
-      rgba(0, 0, 0, 0.1) 50%,
-      rgba(0, 0, 0, 0.1));
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.6;
-}
-
-/* =========================
-   CUSTOM CURSOR
-   ========================= */
-.cursor-dot {
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-primary);
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 10000;
-  mix-blend-mode: difference;
+  transform: skewX(-8deg);
+  text-shadow: 4px 4px 0px var(--color-secondary);
 }
