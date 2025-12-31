@@ -17,17 +17,6 @@ const GlitchText = ({ text, as: Component = 'h1', className = '', ...props }) =>
       <span className="glitch-layer layer-2" aria-hidden="true">{text}</span>
 
       <style>{`
-
-        .glitch-wrapper,
-.glitch-wrapper * {
-  font- family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-}
-
-
         .glitch-wrapper {
           position: relative;
         }
