@@ -1,25 +1,59 @@
 :root {
-  /* Palette - High Contrast Grasshopper Style */
+  /* =========================
+     COLOR PALETTE
+     ========================= */
   --color-bg: #050505;
   --color-text: #f0f0f0;
-  --color-primary: #39ff14; /* Neon Green */
-  --color-secondary: #ff0069; /* Hot Pink */
-  --color-accent: #00f0ff; /* Electric Cyan */
-  --color-nintendo: #e60012; /* Nintendo Red */
-  
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Impact', 'Anton', sans-serif; /* Placeholder for aggressive headers */
 
-  /* Glitch constants */
+  --color-primary: #39ff14;
+  /* Neon Green */
+  --color-secondary: #ff0069;
+  /* Hot Pink */
+  --color-accent: #00f0ff;
+  /* Electric Cyan */
+  --color-nintendo: #e60012;
+  /* Nintendo Red */
+
+  /* =========================
+     FONT STACKS (ROBUSTI)
+     ========================= */
+
+  /* Testo principale – ultra compatibile */
+  --font-main: 'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Arial,
+    sans-serif;
+
+  /* Titoli display – aggressivi ma affidabili su mobile */
+  --font-display: 'Anton',
+    'Impact',
+    'Haettenschweiler',
+    'Arial Black',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Arial,
+    sans-serif;
+
+  /* =========================
+     GLITCH CONSTANTS
+     ========================= */
   --glitch-offset: 2px;
 }
 
-/* Reset & Base */
+/* =========================
+   RESET & BASE
+   ========================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none; /* We will make a custom cursor later */
+  cursor: none;
+  /* custom cursor */
 }
 
 body {
@@ -28,10 +62,18 @@ body {
   font-family: var(--font-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Typography - Suda51 Style */
-h1, h2, h3, h4, h5, h6 {
+/* =========================
+   TYPOGRAPHY – DISPLAY
+   ========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: -0.05em;
@@ -41,17 +83,27 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: clamp(3rem, 10vw, 8rem);
   transform: skewX(-5deg);
-  text-shadow: 4px 4px 0px var(--color-secondary);
+  text-shadow: 4px 4px 0 var(--color-secondary);
 }
 
+/* =========================
+   LINKS
+   ========================= */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Utilities */
-.text-neon-green { color: var(--color-primary); }
-.text-neon-pink { color: var(--color-secondary); }
+/* =========================
+   UTILITIES
+   ========================= */
+.text-neon-green {
+  color: var(--color-primary);
+}
+
+.text-neon-pink {
+  color: var(--color-secondary);
+}
 
 .box-glitch {
   border: 2px solid var(--color-primary);
@@ -59,27 +111,29 @@ a {
   background: rgba(5, 5, 5, 0.9);
 }
 
-/* CRT Scanline Overlay */
+/* =========================
+   CRT SCANLINES OVERLAY
+   ========================= */
 .scanlines {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0) 50%,
-    rgba(0,0,0,0.1) 50%,
-    rgba(0,0,0,0.1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.1));
   background-size: 100% 4px;
   pointer-events: none;
   z-index: 9999;
   opacity: 0.6;
 }
 
-/* Custom Cursor */
+/* =========================
+   CUSTOM CURSOR
+   ========================= */
 .cursor-dot {
   width: 12px;
   height: 12px;
