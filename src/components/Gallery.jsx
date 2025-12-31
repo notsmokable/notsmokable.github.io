@@ -56,6 +56,9 @@ const Gallery = () => {
 
     const currentImage = selectedIndex !== -1 ? images[selectedIndex] : null;
 
+    const isMobile = window.innerWidth <= 768;
+
+
     // Item animation (Simplified)
 
     return (
@@ -72,8 +75,10 @@ const Gallery = () => {
             <motion.div
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                    gap: '2rem'
+                    gap: isMobile ? '0.75rem' : '2rem',
+                    gridTemplateColumns: isMobile
+                        ? 'repeat(3, 1fr)'
+                        : 'repeat(auto-fill, minmax(300px, 1fr))'
                 }}
             >
                 {images.map((img, index) => (
