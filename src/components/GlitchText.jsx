@@ -2,21 +2,32 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const GlitchText = ({ text, as: Component = 'h1', className = '', ...props }) => {
-    // We can use Framer Motion for some juice, or pure CSS for the glitch.
-    // Using pure CSS for the "split RGB" look is often more performant and authentic.
+  // We can use Framer Motion for some juice, or pure CSS for the glitch.
+  // Using pure CSS for the "split RGB" look is often more performant and authentic.
 
-    return (
-        <Component
-            className={`glitch-wrapper ${className}`}
-            data-text={text}
-            {...props}
-            style={{ position: 'relative', display: 'inline-block' }}
-        >
-            <span className="glitch-main">{text}</span>
-            <span className="glitch-layer layer-1" aria-hidden="true">{text}</span>
-            <span className="glitch-layer layer-2" aria-hidden="true">{text}</span>
+  return (
+    <Component
+      className={`glitch-wrapper ${className}`}
+      data-text={text}
+      {...props}
+      style={{ position: 'relative', display: 'inline-block' }}
+    >
+      <span className="glitch-main">{text}</span>
+      <span className="glitch-layer layer-1" aria-hidden="true">{text}</span>
+      <span className="glitch-layer layer-2" aria-hidden="true">{text}</span>
 
-            <style>{`
+      <style>{`
+
+        .glitch-wrapper,
+.glitch-wrapper * {
+  font- family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+
         .glitch-wrapper {
           position: relative;
         }
@@ -61,8 +72,8 @@ const GlitchText = ({ text, as: Component = 'h1', className = '', ...props }) =>
           100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, 0); }
         }
       `}</style>
-        </Component>
-    );
+    </Component>
+  );
 };
 
 export default GlitchText;
